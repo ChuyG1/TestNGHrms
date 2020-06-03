@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Smoke Suite" duration-ms="8618" started-at="2020-06-02T22:15:54 EDT" finished-at="2020-06-02T22:16:03 EDT">
+    <groups>
+      <group name="smoke">
+        <method signature="LoginTest.validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4493d195]" name="validAdminLogin" class="com.hrms.testcases.LoginTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test name="Smoke Test" duration-ms="8618" started-at="2020-06-02T22:15:54 EDT" finished-at="2020-06-02T22:16:03 EDT">
+      <class name="com.hrms.testcases.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.hrms.testcases.LoginTest@4493d195]" name="setUp" is-config="true" duration-ms="4756" started-at="2020-06-02T22:15:54 EDT" finished-at="2020-06-02T22:15:59 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validAdminLogin()[pri:0, instance:com.hrms.testcases.LoginTest@4493d195]" name="validAdminLogin" duration-ms="3168" started-at="2020-06-02T22:15:59 EDT" finished-at="2020-06-02T22:16:02 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validAdminLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.hrms.testcases.LoginTest@4493d195]" name="tearDown" is-config="true" duration-ms="662" started-at="2020-06-02T22:16:02 EDT" finished-at="2020-06-02T22:16:03 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.hrms.testcases.LoginTest -->
+    </test> <!-- Smoke Test -->
+  </suite> <!-- Smoke Suite -->
+</testng-results>
