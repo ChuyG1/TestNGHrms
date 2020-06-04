@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
+import com.hrms.utils.Constants;
 import com.hrms.utils.ExcelUtility;
 
 public class AddEmployeeTest extends CommonMethods {
@@ -19,8 +20,8 @@ public class AddEmployeeTest extends CommonMethods {
 //		tearDown();
 //	}
 	
-	@Test(dataProvider = "userDataFromExcel", groups = {"homeword"})
-	public void test(String firstName, String lastName, String username, String password) {
+	@Test(dataProvider = "userDataFromExcel", groups = {"homework", "addEmp", "regression"})
+	public void addEmployee(String firstName, String lastName, String username, String password) {
 		//Syste.out.println("firstName + " " + lastName + " " + username + " " +
 		// password
 		
@@ -46,6 +47,7 @@ public class AddEmployeeTest extends CommonMethods {
 		sendText(addEmp.username, username);
 		sendText(addEmp.password, password);
 		sendText(addEmp.confirmpassword, password);
+		wait(1);
 		click(addEmp.saveBtn);
 		wait(5);
 		
@@ -60,6 +62,7 @@ public class AddEmployeeTest extends CommonMethods {
 	@DataProvider(name = "userData")
 	public Object[][] getData() {
 		Object[][] data = {
+				{"Rajna", "Capoora", "raj123435345", "AmirKhan_@123"},
 				{"Rohani", "Sahki", "rohani123", "AmirKhang_@123"} };
 			return data;
 		
@@ -67,7 +70,7 @@ public class AddEmployeeTest extends CommonMethods {
 	
 	@DataProvider(name = "userDataFromExcel")
 	public Object[][] getData2(){
-	return ExcelUtility.excelIntoArray(System.getProperty("user.dir")+ "/testdata/Excel.xlsx", "Employee");
+		return ExcelUtility.excelIntoArray(Constants.TESTDATA_FILEPATH, "EmployeeLoginCredentials");
 	}
 	
 }

@@ -1,5 +1,8 @@
 package com.hrms.testcases;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,6 +24,7 @@ public class LoginTest extends CommonMethods {
 	
 	@Test(groups="smoke")
 	public void validAdminLogin() throws InterruptedException {
+		wait(10);
 		//LoginPageElements login=new LoginPageElements();
 		sendText(login.username, ConfigsReader.getProperty("username"));
 		sendText(login.password, ConfigsReader.getProperty("password"));
@@ -56,5 +60,14 @@ public class LoginTest extends CommonMethods {
 		String expected="Username cannot be empty";
 		
 		Assert.assertEquals(login.errorMsg.getText(), expected, "Error message text is not matched");  
+	}
+	
+	@Test
+	public void timeStamp() {
+		Date d=new Date();
+		System.out.println(d.getTime());
+		SimpleDateFormat sdf=new SimpleDateFormat("yyy_MM_dd_HH_mm_ss");
+		System.out.println(sdf.format(d.getTime()));
+		
 	}
 }
